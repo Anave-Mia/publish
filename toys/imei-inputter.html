@@ -37,8 +37,11 @@ function inputAndCheckNum(){
         alert("perfect!");
         nextQ();
     } else {
-        alert("try again");
-        tryAgaine();
+        if(confirm("OK : try again \n or \n cancel : cancel this question")){
+            tryAgaine();
+        } else {
+            goToNext = false;
+        }
     }
 }
 
@@ -48,8 +51,11 @@ function tryAgaine() {
         alert("perfect!");
         nextQ();
     } else {
-        alert("try again");
-        tryAgaine();
+        if(confirm("OK : try again \n or \n cancel : cancel this question")){
+            tryAgaine();
+        } else {
+            goToNext = false;
+        }
     }
 }
 

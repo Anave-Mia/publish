@@ -15,8 +15,9 @@ let goToNext = true;
 let wholeSn = "";
 let input = "";
 let i = 1
+let numOfChar = prompt("How many characters do you try?\n Input 1 ~ 36.")
 while(goToNext){
-    makeSn(14);
+    makeSn(numOfChar);
     inputAndCheckSn();
     goToNext = confirm("go to next question?");    
     i++;

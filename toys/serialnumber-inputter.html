@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>英数字SerialNUmber入力(桁：16)</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+
+<script>
+"use strict";
+
+let goToNext = true;
+let wholeSn = "";
+let input = "";
+let i = 1
+while(goToNext){
+    makeSn(14);
+    inputAndCheckSn();
+    goToNext = confirm("go to next question?");    
+    i++;
+}
+
+
+
+function makeSn(length) {
+    var result = [];
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    var charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+      result.push(characters.charAt(Math.floor(Math.random() * 
+ charactersLength)));
+   }
+   wholeSn = result.join('');
+}
+
+function inputAndCheckSn(){
+    input = prompt(`${i}問目\n\n${wholeSn}\n\n\n\n\n\n\n\n\n\n`);
+    if(input == wholeSn){
+        alert("perfect!");
+        nextQ();
+    } else {
+        if(confirm("OK : try again \n or \n cancel : cancel this question")){
+            tryAgaine();
+        } else {
+            goToNext = false;
+        }
+    }
+}
+
+function tryAgaine() {
+    input = prompt(`${i}問目\n\n${wholeSn}\n\n\n\n\n\n\n\n\n\n`);
+    if(input == wholeSn){
+        alert("perfect!");
+        nextQ();
+    } else {
+        if(confirm("OK : try again \n or \n cancel : cancel this question")){
+            tryAgaine();
+        } else {
+            goToNext = false;
+        }
+    }
+}
+
+function nextQ() {
+    alert("Next Q");
+}
+
+</script>
+
+</body>
+</html>
